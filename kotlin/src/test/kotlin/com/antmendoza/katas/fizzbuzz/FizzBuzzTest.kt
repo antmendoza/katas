@@ -31,4 +31,21 @@ class FizzBuzzTest {
         assertEquals(FizzBuzz(9).print(), "Fizz");
     }
 
+
+    @Test
+    fun `should print Fizz when input is 5`() {
+        assertEquals(FizzBuzz(5).print(), "Buzz");
+    }
+
+    @Test
+    fun `should print Fizz when input is 10`() {
+        assertEquals(FizzBuzz(10).print(), "Buzz");
+    }
+
+
+    @Test
+    fun `should print Fizz when input is 15`() {
+        assertEquals(FizzBuzz(15).print(), "Buzz");
+    }
+
 }
