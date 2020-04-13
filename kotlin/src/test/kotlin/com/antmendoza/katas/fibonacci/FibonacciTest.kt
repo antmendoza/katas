@@ -42,6 +42,11 @@ class FibonacciTest {
         assertEquals(5, Fibonacci().inPosition(6))
     }
 
+    @Test
+    fun `Should return 21 for position 9 `() {
+        assertEquals(21, Fibonacci().inPosition(9))
+    }
+
 
 
 }

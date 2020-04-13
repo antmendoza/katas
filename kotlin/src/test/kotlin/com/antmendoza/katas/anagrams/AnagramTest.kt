@@ -3,61 +3,42 @@ package com.antmendoza.katas.anagrams
 import org.hamcrest.CoreMatchers.hasItem
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Test
-import kotlin.test.assertEquals
+
+/*
+    Anagrams by cyber-dojo
+    Write a program to generate all potential anagrams of an input string
+    For example, the potential anagrams of “biro” are:
+    biro bior brio broi boir bori
+    ibro ibor irbo irob iobr iorb
+    rbio rboi ribo riob roib robi
+    obir obri oibr oirb orbi orib”
+*/
 
 class AnagramTest {
 
 
     @Test
     fun `should anagram empty string`() {
-        val source = "";
-        val result = Anagram().generate(source)
-        assertThat(result, `hasItem`(source))
-    }
-
-    @Test
-    fun `should anagram one letters word`() {
-        val source = "A";
-        val result = Anagram().generate(source)
-        assertThat(result, `hasItem`(source))
+        val result = Anagram().of("")
+        assertThat(result, `hasItem`(""))
     }
 
 
     @Test
-    fun `should anagram two letters word`() {
-        val source = "AB";
-
-        val result = Anagram().generate(source)
-
-        assertThat(result, `hasItem`("AB"))
-        assertThat(result, `hasItem`("BA"))
+    fun `should anagram a single letter`() {
+        assertThat(Anagram().of("A"), `hasItem`("A"))
+        assertThat(Anagram().of("B"), `hasItem`("B"))
+        assertThat(Anagram().of("C"), `hasItem`("C"))
     }
 
 
     @Test
-    fun `should anagram three letters word`() {
-        val source = "ABC";
-
-        val result = Anagram().generate(source)
-
-        assertThat(result, `hasItem`("ABC"))
-        assertThat(result, `hasItem`("BAC"))
-
-        assertEquals(result.size, 6)
+    fun `should anagram a word of two letters`() {
+        assertThat(Anagram().of("AB"), `hasItem`("AB"))
+        assertThat(Anagram().of("AB"), `hasItem`("BA"))
     }
 
 
 
-    @Test
-    fun `should anagram four letters word`() {
-        val source = "ABCD";
 
-        val result = Anagram().generate(source)
-
-        assertThat(result, `hasItem`("ABCD"))
-        assertThat(result, `hasItem`("BACD"))
-        assertThat(result, `hasItem`("BDAC"))
-
-        assertEquals(result.size, 24)
-    }
 }
