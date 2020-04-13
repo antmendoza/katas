@@ -3,15 +3,14 @@ package com.antmendoza.katas.fibonacci
 class Fibonacci {
     fun inPosition(i: Int): Int {
 
+        var list = listOf(0, 1)
 
-
-        var list = listOf<Int>(0,1,1,2,3)
-
-        if(i <= list.size){
-            return list.get(i-1)
+        if (i <= list.size) {
+            return list.get(i - 1)
         }
 
-        return 0
+        return inPosition(i - 1) + inPosition(i - 2)
+
     }
 
 }
