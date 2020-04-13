@@ -25,21 +25,10 @@ class FizzBuzzTest {
 
 
     @Test
-    fun `should print Fizz where input is 3`() {
-        val result = FizzBuzz(3).print()
-        assertEquals(result, "Fizz");
-    }
-
-    @Test
-    fun `should print Fizz where input is 6`() {
-        val result = FizzBuzz(6).print()
-        assertEquals(result, "Fizz");
-    }
-
-    @Test
-    fun `should print Fizz where input is 9`() {
-        val result = FizzBuzz(9).print()
-        assertEquals(result, "Fizz");
+    fun `should print Fizz for multiples of three`() {
+        assertEquals(FizzBuzz(3).print(), "Fizz");
+        assertEquals(FizzBuzz(6).print(), "Fizz");
+        assertEquals(FizzBuzz(9).print(), "Fizz");
     }
 
 }
