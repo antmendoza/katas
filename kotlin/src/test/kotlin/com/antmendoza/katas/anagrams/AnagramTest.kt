@@ -3,6 +3,7 @@ package com.antmendoza.katas.anagrams
 import org.hamcrest.CoreMatchers.hasItem
 import org.hamcrest.MatcherAssert.assertThat
 import org.junit.Test
+import kotlin.test.assertEquals
 
 /*
     Anagrams by cyber-dojo
@@ -36,6 +37,26 @@ class AnagramTest {
     fun `should anagram a word of two letters`() {
         assertThat(Anagram().of("AB"), `hasItem`("AB"))
         assertThat(Anagram().of("AB"), `hasItem`("BA"))
+    }
+
+
+    @Test
+    fun `should anagram a word of three letters`() {
+        assertThat(Anagram().of("ABC"), `hasItem`("ABC"))
+        assertThat(Anagram().of("ABC"), `hasItem`("ACB"))
+        assertThat(Anagram().of("ABC"), `hasItem`("BAC"))
+        assertThat(Anagram().of("ABC"), `hasItem`("BCA"))
+        assertThat(Anagram().of("ABC"), `hasItem`("CAB"))
+        assertThat(Anagram().of("ABC"), `hasItem`("CBA"))
+    }
+
+
+    @Test
+    fun `should anagram a word of four letters`() {
+        assertThat(Anagram().of("biro"), `hasItem`("biro"))
+        assertThat(Anagram().of("biro"), `hasItem`("broi"))
+        assertEquals(Anagram().of("biro").size, 24)
+
     }
 
 
