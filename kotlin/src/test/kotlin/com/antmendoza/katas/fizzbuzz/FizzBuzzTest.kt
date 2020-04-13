@@ -33,19 +33,19 @@ class FizzBuzzTest {
 
 
     @Test
-    fun `should print Fizz when input is 5`() {
+    fun `should print Buzz for multiples of five`() {
         assertEquals(FizzBuzz(5).print(), "Buzz");
-    }
-
-    @Test
-    fun `should print Fizz when input is 10`() {
         assertEquals(FizzBuzz(10).print(), "Buzz");
+        assertEquals(FizzBuzz(20).print(), "Buzz");
     }
-
 
     @Test
-    fun `should print Fizz when input is 15`() {
-        assertEquals(FizzBuzz(15).print(), "Buzz");
+    fun `should print FizzBuzz for multiples of both three and five`() {
+        assertEquals(FizzBuzz(15).print(), "FizzBuzz");
+        assertEquals(FizzBuzz(30).print(), "FizzBuzz");
+        assertEquals(FizzBuzz(45).print(), "FizzBuzz");
     }
+
+
 
 }
