@@ -26,7 +26,7 @@ class AnagramTest {
 
 
     @Test
-    fun `should anagram a single letter`() {
+    fun `should anagram a word of one character`() {
         assertThat(Anagram().of("A"), `hasItem`("A"))
         assertThat(Anagram().of("B"), `hasItem`("B"))
         assertThat(Anagram().of("C"), `hasItem`("C"))
@@ -34,29 +34,40 @@ class AnagramTest {
 
 
     @Test
-    fun `should anagram a word of two letters`() {
+    fun `should anagram a word of two character`() {
         assertThat(Anagram().of("AB"), `hasItem`("AB"))
         assertThat(Anagram().of("AB"), `hasItem`("BA"))
     }
 
 
     @Test
-    fun `should anagram a word of three letters`() {
-        assertThat(Anagram().of("ABC"), `hasItem`("ABC"))
-        assertThat(Anagram().of("ABC"), `hasItem`("ACB"))
-        assertThat(Anagram().of("ABC"), `hasItem`("BAC"))
-        assertThat(Anagram().of("ABC"), `hasItem`("BCA"))
-        assertThat(Anagram().of("ABC"), `hasItem`("CAB"))
-        assertThat(Anagram().of("ABC"), `hasItem`("CBA"))
+    fun `should anagram a word of three character`() {
+        val of = Anagram().of("ABC")
+        assertThat(of, `hasItem`("ABC"))
+        assertThat(of, `hasItem`("ACB"))
+        assertThat(of, `hasItem`("BCA"))
+        assertThat(of, `hasItem`("BAC"))
+        assertThat(of, `hasItem`("CBA"))
+        assertThat(of, `hasItem`("CAB"))
     }
 
 
     @Test
-    fun `should anagram a word of four letters`() {
-        assertThat(Anagram().of("biro"), `hasItem`("biro"))
-        assertThat(Anagram().of("biro"), `hasItem`("broi"))
-        assertEquals(Anagram().of("biro").size, 24)
+    fun `should anagram a word of four character`() {
+        val of = Anagram().of("ABCD")
+        assertThat(of, `hasItem`("ABCD"))
+        assertThat(of, `hasItem`("ABDC"))
+        assertThat(of, `hasItem`("ACBD"))
+        assertThat(of, `hasItem`("ACDB"))
+        assertThat(of, `hasItem`("ADCB"))
 
+        assertThat(of, `hasItem`("BACD"))
+        assertThat(of, `hasItem`("BADC"))
+        assertThat(of, `hasItem`("BCDA"))
+        assertThat(of, `hasItem`("BCAD"))
+
+        println(of)
+        assertEquals( 24, of.size)
     }
 
 

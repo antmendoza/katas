@@ -1,28 +1,30 @@
 package com.antmendoza.katas.anagrams
 
 class Anagram {
-    fun of(value: String): List<String> {
+    fun of(source: String): List<String> {
 
-        if (value.length <= 1) {
-            return listOf(value)
+
+        if (source.length <= 1) {
+            return mutableListOf(source)
+
         }
 
-        if (value.length === 2) {
-            return listOf(
-                value.substring(0, 1) + value.substring(1, 2),
-                value.substring(1, 2) + value.substring(0, 1)
-            )
+        if (source.length === 2) {
+            var result = mutableListOf<String>()
+            result.add(source.substring(0, 1) + source.substring(1, 2))
+            result.add(source.substring(1, 2) + source.substring(0, 1))
+            return result
         }
 
 
-        var result = mutableListOf<String>()
-        for (i in value.indices) {
-            var init = value.substring(i, i + 1);
-            for (g in of(value.removeRange(i, i + 1))) {
-                result.add(init + g)
+        val result = mutableListOf<String>()
+        for (i in 0..source.length - 1) {
+            val variable = of(source.removeRange(i, i + 1))
+            for (v in variable) {
+                result.add(source.substring(i, i + 1) + v)
             }
         }
-        return result;
+        return result
 
 
     }
