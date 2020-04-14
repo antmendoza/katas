@@ -66,11 +66,8 @@ class AnagramTest {
         assertThat(of, `hasItem`("BCDA"))
         assertThat(of, `hasItem`("BCAD"))
 
-        println(of)
-        assertEquals( 24, of.size)
+        assertEquals(24, of.size)
     }
-
-
 
 
 }
