@@ -26,7 +26,7 @@ class StatsCalculatorTest {
     }
 
     @Test
-    fun `Should return the numner of elements in the sequence`() {
+    fun `Should return the number of elements in the sequence`() {
 
         val numberOfElements = StatsCalculator(sequence).numberOfElements()
 
@@ -35,7 +35,7 @@ class StatsCalculatorTest {
 
 
     @Test
-    fun `Should retunr the average value`() {
+    fun `Should return the average value`() {
 
         val average = StatsCalculator(sequence).average()
 
