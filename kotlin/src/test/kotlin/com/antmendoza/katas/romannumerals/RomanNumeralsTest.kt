@@ -7,17 +7,24 @@ import kotlin.test.assertEquals
 class RomanNumeralsTest {
 
     @Test
-    fun `Should convert number 1 to Arabic `() {
+    fun `Should convert Roman number to Arabic `() {
         assertEquals("I", ArabicNumber(1).toRoman())
-    }
-
-    @Test
-    fun `Should convert number 2 to Arabic `() {
         assertEquals("II", ArabicNumber(2).toRoman())
+        assertEquals("III", ArabicNumber(3).toRoman())
+        assertEquals("IV", ArabicNumber(4).toRoman())
+        assertEquals("V", ArabicNumber(5).toRoman())
+        assertEquals("VI", ArabicNumber(6).toRoman())
+        assertEquals("VII", ArabicNumber(7).toRoman())
+        assertEquals("VIII", ArabicNumber(8).toRoman())
+        assertEquals("IX", ArabicNumber(9).toRoman())
+        assertEquals("X", ArabicNumber(10).toRoman())
+        assertEquals("XI", ArabicNumber(11).toRoman())
+
+        assertEquals("XVIII", ArabicNumber(18).toRoman())
+
+        assertEquals("XIX", ArabicNumber(19).toRoman())
+
+        assertEquals("XX", ArabicNumber(20).toRoman())
     }
 
-    @Test
-    fun `Should convert number 3 to Arabic `() {
-        assertEquals("III", ArabicNumber(3).toRoman())
-    }
 }
