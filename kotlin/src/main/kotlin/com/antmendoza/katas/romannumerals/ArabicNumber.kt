@@ -3,33 +3,39 @@ package com.antmendoza.katas.romannumerals
 class ArabicNumber(var value: Int) {
     fun toRoman(): String {
 
-
-
-
-
-        if (value === 4) {
-            return "IV"
-        }
-
-
-        if (value === 9) {
-            return "IX"
-        }
-
-        if (value >= 5  && value < 10) {
-            return "V" + ArabicNumber(value-5).toRoman()
-        }
-
-
-        if (value >= 10  && value <= 20) {
-            return "X" + ArabicNumber(value-10).toRoman()
-        }
-
+        var base = mapOf(
+            1000 to "M"
+            ,
+            900 to "CM"
+            ,
+            500 to "D"
+            ,
+            400 to "CD"
+            ,
+            100 to "C"
+            ,
+            50 to "L"
+            ,
+            40 to "XL"
+            ,
+            10 to "X"
+            ,
+            9 to "IX"
+            ,
+            5 to "V"
+            ,
+            4 to "IV"
+            ,
+            1 to "I"
+        )
 
 
         var result = "";
-        for (i in 1..value) {
-            result += "I"
+
+        for (b in base) {
+            if (value / b.key > 0 && result === "") {
+                result = b.value + ArabicNumber(value - b.key).toRoman()
+            }
         }
         return result
 

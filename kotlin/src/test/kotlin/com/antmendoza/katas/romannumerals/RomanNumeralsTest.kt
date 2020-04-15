@@ -8,6 +8,7 @@ class RomanNumeralsTest {
 
     @Test
     fun `Should convert Roman number to Arabic `() {
+
         assertEquals("I", ArabicNumber(1).toRoman())
         assertEquals("II", ArabicNumber(2).toRoman())
         assertEquals("III", ArabicNumber(3).toRoman())
@@ -25,6 +26,12 @@ class RomanNumeralsTest {
         assertEquals("XIX", ArabicNumber(19).toRoman())
 
         assertEquals("XX", ArabicNumber(20).toRoman())
+        assertEquals("XXX", ArabicNumber(30).toRoman())
+        assertEquals("XL", ArabicNumber(40).toRoman())
+        assertEquals("L", ArabicNumber(50).toRoman())
+        assertEquals("CD", ArabicNumber(400).toRoman())
+        assertEquals("DCCCLVI", ArabicNumber(856).toRoman())
+        assertEquals("CM", ArabicNumber(900).toRoman())
     }
 
 }
