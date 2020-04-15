@@ -31,7 +31,6 @@ class ArabicNumber(var value: Int) {
 
 
         var result = "";
-
         for (b in base) {
             if (value / b.key > 0 && result === "") {
                 result = b.value + ArabicNumber(value - b.key).toRoman()
