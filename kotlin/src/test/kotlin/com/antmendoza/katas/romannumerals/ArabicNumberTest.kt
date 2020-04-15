@@ -4,7 +4,7 @@ package com.antmendoza.katas.romannumerals
 import org.junit.Test
 import kotlin.test.assertEquals
 
-class RomanNumeralsTest {
+class ArabicNumberTest {
 
     @Test
     fun `Should convert Roman number to Arabic `() {
